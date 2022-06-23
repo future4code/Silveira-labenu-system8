@@ -18,4 +18,3 @@ export class Estudantes extends Usuario implements Hobbys{
     public getHobbys = () => this.hobbys
 }
 
-export const adeir = new Estudantes(idGenerator(20),'adeir','adeir@gmail.com','12/12/1994',idGenerator(10),['codar','amar','dormir'])

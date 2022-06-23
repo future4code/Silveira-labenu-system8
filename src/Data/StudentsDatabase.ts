@@ -5,7 +5,7 @@ import BaseDataBase from "./BaseDataBase";
 export default class StudentDatabase extends BaseDataBase {
     public  getAll = async ():Promise<Student[]> => {
         try {
-            return  await BaseDataBase.connection('Estudantes').select('*')
+            return  await BaseDataBase.connection('estudante').select('*')
         } catch (error) {
             throw new Error('Erro no banco de dados')
         }
@@ -13,7 +13,7 @@ export default class StudentDatabase extends BaseDataBase {
 
     public  search = async (term:string):Promise<Student[]> => {
         try {
-            return  await BaseDataBase.connection('Estudantes').select('*').where('nome','LIKE',`%${term}%`)
+            return  await BaseDataBase.connection('estudante').select('*').where('nome','LIKE',`%${term}%`)
         } catch (error) {
             throw new Error('Erro no banco de dados')
         }
@@ -21,7 +21,7 @@ export default class StudentDatabase extends BaseDataBase {
 
     public create = async (student:Estudantes):Promise<void> => {
         try {
-            await BaseDataBase.connection('Estudantes')
+            await BaseDataBase.connection('estudante')
             .insert({ 
                 id: student.getId(),
                 nome: student.getNome(),
