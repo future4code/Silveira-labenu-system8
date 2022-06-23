@@ -1,0 +1,19 @@
+GET http://localhost:3003/estudantes
+
+###
+
+POST  http://localhost:3003/estudantes
+Content-Type: application/json
+
+{
+    "id": "",
+    "nome": "",
+    "email": "",
+    "data_nasc": "",
+    "turma_id": "",
+    "hobbys": ["codar"]
+}
+
+###
+
+GET http://localhost:3003/estudantes/search?term=adeir

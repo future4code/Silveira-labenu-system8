@@ -2,13 +2,20 @@ import idGenerator from "./GeradorID";
 import { Hobbys, Usuario } from "./Types";
 
 export class Estudantes extends Usuario implements Hobbys{
-    hobbies: string[] = []
+    hobbys:  string[] = []
     constructor(
-        id:string,nome:string,email:string,data_nasc:string,turma_id:string, hobbies: string[]
+        id:string,nome:string,email:string,data_nasc:string,turma_id:string, hobbys: string[]
     ){
         super(id,nome,email,data_nasc,turma_id)
-        this.hobbies = hobbies
+        this.hobbys = hobbys
     }
+
+    public getId = () => this.id
+    public getNome = () => this.nome
+    public getEmail = () => this.email
+    public getData_nasc = () => this.data_nasc
+    public getTurma_id = () => this.turma_id
+    public getHobbys = () => this.hobbys
 }
 
 export const adeir = new Estudantes(idGenerator(20),'adeir','adeir@gmail.com','12/12/1994',idGenerator(10),['codar','amar','dormir'])
