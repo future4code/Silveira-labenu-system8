@@ -10,5 +10,5 @@ export class Docentes extends Usuario implements Especialidades {
     
 }
 
-export const jana = new Docentes(idGenerator(20),'janaila','jana@gmail','15/08/1990',idGenerator(10), [{id:idGenerator(5),nome:EspecificidadesEnum.POO}])
+
 
