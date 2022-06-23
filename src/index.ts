@@ -1,7 +1,10 @@
-import { jana } from "./Model/Docentes";
-import { adeir } from "./Model/Estudante";
-import { Silveira } from "./Model/Turmas";
+import { app } from "./app";
+import createStudent from "./EndPoints/createStudents";
+import  getAllStudents  from "./EndPoints/getAllStudents";
+import searchStudent from "./EndPoints/searchStudent";
 
-console.log(jana)
-console.log(adeir)
-console.log(Silveira)
+app.get('/estudantes', getAllStudents)
+
+app.get('/estudantes/search', searchStudent)
+
+app.post('/estudantes', createStudent)

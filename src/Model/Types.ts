@@ -27,10 +27,18 @@ export type Especialidade = {
     nome:EspecificidadesEnum
 }
 
+export type Student = {
+    id: string,
+    nome: string,
+    email: string,
+    data_nasc: string,
+    turma_id: string
+}
+
 export interface Especialidades  {
     especialidades: Especialidade[]
 }
 
 export interface Hobbys {
-    hobbies: string[]
+    hobbys: string[]
 }
