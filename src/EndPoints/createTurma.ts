@@ -5,7 +5,7 @@ import { Turmas } from "../Model/Turmas";
 
 export default async function createTurma(req:Request, res:Response) {
     const statusCode = 201
-    const id:string = idGenerator(10)
+    const id:string = idGenerator(5)
     const {nome, modulo} = req.body
     try {
         const turmaDB = new turmaDataBase()

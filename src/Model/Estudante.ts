@@ -1,10 +1,10 @@
 import idGenerator from "./GeradorID";
-import { Hobbys, Usuario } from "./Types";
+import { hobby, Hobbys, Usuario } from "./Types";
 
 export class Estudantes extends Usuario implements Hobbys{
-    hobbys:  string[] = []
+    hobbys:  hobby[] = []
     constructor(
-        id:string,nome:string,email:string,data_nasc:string,turma_id:string, hobbys: string[]
+        id:string,nome:string,email:string,data_nasc:string,turma_id:string, hobbys: hobby[]
     ){
         super(id,nome,email,data_nasc,turma_id)
         this.hobbys = hobbys

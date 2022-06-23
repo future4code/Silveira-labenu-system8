@@ -21,14 +21,15 @@ export default class turmaDataBase extends BaseDataBase {
 
     public createTurma = async (turma:Turmas):Promise<void> =>{
        try {
-        await BaseDataBase.connection("turma")
+        await BaseDataBase.connection("turmassss")
         .insert({
             id:turma.getId(),
             nome:turma.getNome(),
             modulo:turma.getModulo()
         })
        } catch (error:any) {
-        
+        console.log({data:{message:error.sqlMessage}})
+        throw new Error('Erro no banco de dados')
        } 
     }
 }

@@ -6,12 +6,11 @@ POST  http://localhost:3003/estudantes
 Content-Type: application/json
 
 {
-    "id": "",
-    "nome": "",
-    "email": "",
-    "data_nasc": "",
-    "turma_id": "",
-    "hobbys": ["codar"]
+    "nome": "duda69",
+    "email": "duda69@gmail",
+    "data_nasc": "2022/06/20",
+    "turma_id": "oy7Rca",
+    "hobbys": ["treinar22","ler22","beber22"]
 }
 
 ###
@@ -23,8 +22,8 @@ POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome":"jumanji",
-    "modulo": 0
+    "nome":"silveira",
+    "modulo": 5
 }
 
 ###
