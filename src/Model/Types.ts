@@ -35,12 +35,17 @@ export type Student = {
     turma_id: string
 }
 
+export type hobby = {
+    id: string,
+    nome: string
+}
+
 export interface Especialidades  {
     especialidades: Especialidade[]
 }
 
 export interface Hobbys {
-    hobbys: string[]
+    hobbys: hobby[]
 }
 
 export type Teacher = {
