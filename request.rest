@@ -30,11 +30,11 @@ POST http://localhost:3003/docentes
 Content-Type: application/json
 
 {  
-    "nome": "Diego",
-    "email": "dgo.eduardo@email.com",
-    "data_nasc": "1990/04/20",
+    "nome": "Lucas QueMedo",
+    "email": "Lucas@email.com",
+    "data_nasc": "2000/04/20",
     "turma_id": "oy7Rca",
-    "especialidades": ["React"]
+    "especialidades": ["React","JS"]
 
 }
 
