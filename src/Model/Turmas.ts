@@ -1,9 +1,10 @@
-import { jana } from "./Docentes";
-import idGenerator from "./GeradorID";
-import { Modulo } from "./Types";
 
-export class Trumas {
-    constructor(private id: string, private nome:string, private docentes: string[] | string, private modulo: number){}
+
+export class Turmas {
+    constructor(private id: string, private nome:string, private modulo: number){}
+    public getId = () => this.id
+    public getNome = () => this.nome
+    public getModulo = () => this.modulo
 }
 
-export const Silveira = new Trumas(idGenerator(10),'Silveira',[jana.id],Modulo.cinco)
+

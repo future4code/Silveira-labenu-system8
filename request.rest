@@ -19,6 +19,7 @@ Content-Type: application/json
 GET http://localhost:3003/estudantes/search?term=adeir
 
 
+
 ###
 
 GET http://localhost:3003/docentes
@@ -46,3 +47,19 @@ Content-Type: application/json
     "id":"hqi6ElTJIKK",
     "turma_id":"IvxF2P"
 }
+
+###
+POST http://localhost:3003/turma
+Content-Type: application/json
+
+{
+    "nome":"jumanji",
+    "modulo": 0
+}
+
+###
+GET http://localhost:3003/turma
+
+###
+GET http://localhost:3003/turma/active
+
