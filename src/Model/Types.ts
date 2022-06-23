@@ -22,11 +22,6 @@ export enum Modulo {
     'seis' = 6
 }
 
-export type Especialidade = {
-    id:string,
-    nome:EspecificidadesEnum
-}
-
 export type Student = {
     id: string,
     nome: string,
@@ -40,6 +35,11 @@ export type hobby = {
     nome: string
 }
 
+export type Especialidade = {
+    id:string,
+    // nome:EspecificidadesEnum VER ISSO DEPOIS
+    nome: string
+}
 export interface Especialidades  {
     especialidades: Especialidade[]
 }
