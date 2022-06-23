@@ -1,5 +1,5 @@
-import idGenerator from "./GeradorID";
-import { Especialidades, EspecificidadesEnum, Especialidade, Hobbys,  Usuario } from "./Types";
+
+import { Especialidades, EspecificidadesEnum, Especialidade, Usuario } from "./Types";
 
 export class Docentes extends Usuario implements Especialidades {
     especialidades: Especialidade[] = []
@@ -7,8 +7,12 @@ export class Docentes extends Usuario implements Especialidades {
         super(id,nome,email,data_nasc,turma_id)
         this.especialidades = especialidades
     }
-    
+    public getId = () => this.id
+    public getNome = () => this.nome
+    public getEmail = () => this.email
+    public getData_nasc = () => this.data_nasc
+    public getTurma_id = () => this.turma_id
+    public getEspecialidades = () => this.especialidades
 }
 
-export const jana = new Docentes(idGenerator(20),'janaila','jana@gmail','15/08/1990',idGenerator(10), [{id:idGenerator(5),nome:EspecificidadesEnum.POO}])
 

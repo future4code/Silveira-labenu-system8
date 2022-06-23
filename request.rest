@@ -17,3 +17,32 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3003/estudantes/search?term=adeir
+
+
+###
+
+GET http://localhost:3003/docentes
+Content-Type: application/json
+
+
+###
+POST http://localhost:3003/docentes
+Content-Type: application/json
+
+{  
+    "nome": "Diego",
+    "email": "dgo.eduardo@email.com",
+    "data_nasc": "1990/04/20",
+    "turma_id": "oy7Rca",
+    "especialidades": ["React"]
+
+}
+
+###
+PUT http://localhost:3003/docentes
+Content-Type: application/json
+
+{
+    "id":"hqi6ElTJIKK",
+    "turma_id":"IvxF2P"
+}
