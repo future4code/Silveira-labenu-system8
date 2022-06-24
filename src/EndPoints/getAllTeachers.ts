@@ -9,6 +9,6 @@ export default async function getAllTeachers (req:Request,res:Response):Promise<
         res.status(statusCode).send(await teachersDB.getAll())
     } catch (error:any) {
         
-        res.status(404).send({error:error.message})
+        res.status(400).send({ message: error.message || error.sqlMessage })
     }
 }

@@ -5,9 +5,16 @@ import { Turmas } from "../Model/Turmas";
 
 export default async function createTurma(req:Request, res:Response) {
     const statusCode = 201
+    let errorCode: number = 400
     const id:string = idGenerator(5)
     const {nome, modulo} = req.body
     try {
+
+        if (!nome || !modulo) {
+            errorCode = 422
+            throw new Error('Verifique se todos os campos estão preenchidos')
+        }
+
         const turmaDB = new turmaDataBase()
         const turma = new Turmas(id, nome, modulo)
         await turmaDB.createTurma(turma)

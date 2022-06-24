@@ -7,6 +7,7 @@ import idGenerator from "../Model/GeradorID";
 
 export default async function createTeacher(req: Request, res: Response) {
     const statusCode = 201
+    let errorCode: number = 400
     const id: string = idGenerator(10)
     const { nome, email, data_nasc, turma_id, especialidades } = req.body
 
@@ -16,6 +17,12 @@ export default async function createTeacher(req: Request, res: Response) {
     })
         
     try {
+
+        if (!nome || !email ||!data_nasc||!turma_id||!especialidades) {
+            errorCode = 422
+            throw new Error('Verifique se todos os campos estão preenchidos')
+        }
+
         const teacherDB = new TeacherDatabase()
         const teacher = new Docentes(id, nome, email, data_nasc, turma_id, especialidadeId)
         await teacherDB.create(teacher)
@@ -23,8 +30,8 @@ export default async function createTeacher(req: Request, res: Response) {
         res.status(statusCode).send()
 
     } catch (error: any) {
-
-        res.status(404).send({ error: error.message })
+        res.status(errorCode).send({ message: error.message })
+        res.status(400).send({ message: error.message || error.sqlMessage })
     }
 
 }
