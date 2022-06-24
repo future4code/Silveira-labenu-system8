@@ -4,9 +4,9 @@ import { hobby, Hobbys, Usuario } from "./Types";
 export class Estudantes extends Usuario implements Hobbys{
     hobbys:  hobby[] = []
     constructor(
-        id:string,nome:string,email:string,data_nasc:string,turma_id:string, hobbys: hobby[]
+        id:string,nome:string,email:string,data_nasc:string, hobbys: hobby[]
     ){
-        super(id,nome,email,data_nasc,turma_id)
+        super(id,nome,email,data_nasc)
         this.hobbys = hobbys
     }
 

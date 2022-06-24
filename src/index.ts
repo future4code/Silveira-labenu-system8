@@ -8,15 +8,19 @@ import getActiveTurma from "./EndPoints/getActiveTurma";
 import getAllStudents  from "./EndPoints/getAllStudents";
 import getAllTurmas from "./EndPoints/getAllTurma";
 import searchStudent from "./EndPoints/searchStudent";
+import studentChangeClass from "./EndPoints/studentChangeClass";
+
 
 
 app.get('/estudantes', getAllStudents)
 
 app.get('/estudantes/search', searchStudent)
 
-app.post('/estudantes', createStudent)
+app.put('/estudantes', studentChangeClass)
 
 app.put("/docentes", changeClass)
+
+app.post('/estudantes', createStudent)
 
 app.post("/docentes", createTeacher);
 
@@ -29,5 +33,7 @@ app.get('/turma/active', getActiveTurma)
 app.post('/estudantes', createStudent)
 
 app.post('/turma', createTurma)
+
+
 
 

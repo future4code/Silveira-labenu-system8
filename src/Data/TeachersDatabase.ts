@@ -9,7 +9,11 @@ export default class TeacherDatabase extends BaseDataBase {
 
     public getAll = async (): Promise<Teacher[]> => {
         try {
-            return await BaseDataBase.connection("docente").select("*")
+            const result = await BaseDataBase.connection("docente").select("*")
+            return result.map((teacher:Teacher) => {
+                const revetedData = new Date(teacher.data_nasc).toISOString().slice(0, 10).split("-").reverse().join("/")
+                return {...teacher, data_nasc: revetedData}
+            })
 
         } catch (error: any) {
             console.log({ data: { message: error.sqlMessage } })
@@ -26,26 +30,25 @@ export default class TeacherDatabase extends BaseDataBase {
                     email: teacher.getEmail(),
                     data_nasc: teacher.getData_nasc(),
                     turma_id: teacher.getTurma_id()
-                })
-            const especialidade = teacher.especialidades.map((especialidade: Especialidade) => {
+        })
+            const especialidade = teacher.especialidades.map((especialidade: Especialidade):Promise<void> => 
                 BaseDataBase.connection("especialidade")
                     .insert({
                         id: especialidade.id,
                         nome: especialidade.nome
                     })
-            })
+            )
             await Promise.all(especialidade)
-            const especialidade2 = teacher.especialidades.map((especialidade: Especialidade) => {
+
+            const teacherEspecialidade = teacher.especialidades.map((especialidade: Especialidade):Promise<void> => 
                 BaseDataBase.connection("docente_especialidade")
                     .insert({
                         id: idGenerator(5),
                         docente_id: teacher.getId(),
                         especialidade_id: especialidade.id
                     })
-            })
-            await Promise.all(especialidade2)
-
-       
+            )
+            await Promise.all(teacherEspecialidade)
         } catch (error: any) {
             console.log({ data: { message: error.sqlMessage } })
             throw new Error('Erro no banco de dados')

@@ -1,7 +1,15 @@
 export abstract class Usuario {
+    protected turma_id:string = 'K2dRx6'
     constructor (
-        readonly id:string,  protected nome:string, protected email:string, protected data_nasc:string, protected turma_id:string
+        protected id:string,  protected nome:string, protected email:string, protected data_nasc:string
         ) {}
+}
+
+export  class teste {
+    teste:string = ''
+    teste2:string = 'asdv'
+    constructor(){
+    }
 }
 
 export enum EspecificidadesEnum  {
