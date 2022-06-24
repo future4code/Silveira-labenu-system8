@@ -16,10 +16,10 @@ POST  http://localhost:3003/estudantes
 Content-Type: application/json
 
 {
-    "nome": "",
-    "email": "",
-    "data_nasc": "",
-    "hobbys": []
+    "nome": "Adeir",
+    "email": "adeir@devFront-end.com",
+    "data_nasc": "12/12/1994",
+    "hobbys": ["amar","codar","dormir"]
 }
 
 ###
@@ -39,10 +39,10 @@ POST http://localhost:3003/docentes
 Content-Type: application/json
 
 {  
-    "nome": "",
-    "email": "",
-    "data_nasc": "",
-    "especialidades": [""]
+    "nome": "Janayla",
+    "email": "jana@labenu.com",
+    "data_nasc": "20/05/2000",
+    "especialidades": ["js","css","react"]
 
 }
 

@@ -9,7 +9,11 @@ export default class TeacherDatabase extends BaseDataBase {
 
     public getAll = async (): Promise<Teacher[]> => {
         try {
-            return await BaseDataBase.connection("docente").select("*")
+            const result = await BaseDataBase.connection("docente").select("*")
+            return result.map((teacher:Teacher) => {
+                const revetedData = new Date(teacher.data_nasc).toISOString().slice(0, 10).split("-").reverse().join("/")
+                return {...teacher, data_nasc: revetedData}
+            })
 
         } catch (error: any) {
             console.log({ data: { message: error.sqlMessage } })

@@ -9,7 +9,7 @@ export default async function createTeacher(req: Request, res: Response) {
     const statusCode = 201
     const id: string = idGenerator(10)
     const { nome, email, data_nasc, especialidades } = req.body
-
+    const revetedData_Nasc = data_nasc.split('/').reverse().join('-')
     const especialidadeId = especialidades.map((especialidade: string) => {
 
         return { id: idGenerator(5), nome: especialidade }
@@ -17,7 +17,7 @@ export default async function createTeacher(req: Request, res: Response) {
         
     try {
         const teacherDB = new TeacherDatabase()
-        const teacher = new Docentes(id, nome, email, data_nasc, especialidadeId)
+        const teacher = new Docentes(id, nome, email, revetedData_Nasc, especialidadeId)
         await teacherDB.create(teacher)
 
         res.status(statusCode).send()
