@@ -15,7 +15,7 @@ export default async function createStudent(req:Request,res:Response) {
     })
     try {
 
-        if (!nome || !email ||!data_nasc||!turma_id||!hobbys) {
+        if (!nome || !email ||!data_nasc||!hobbys) {
             errorCode = 422
             throw new Error('Verifique se todos os campos estão preenchidos')
         }

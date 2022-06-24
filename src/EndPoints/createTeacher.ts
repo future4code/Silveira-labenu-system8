@@ -18,7 +18,7 @@ export default async function createTeacher(req: Request, res: Response) {
         
     try {
 
-        if (!nome || !email ||!data_nasc||!turma_id||!especialidades) {
+        if (!nome || !email ||!data_nasc||!especialidades) {
             errorCode = 422
             throw new Error('Verifique se todos os campos estão preenchidos')
         }
