@@ -2,14 +2,23 @@ GET http://localhost:3003/estudantes
 
 ###
 
+PUT http://localhost:3003/estudantes
+Content-Type: application/json
+
+{
+    "id": "h7MkRx",
+    "turma_id":"tANmNw"
+}
+
+###
+
 POST  http://localhost:3003/estudantes
 Content-Type: application/json
 
 {
-    "nome": "duda69",
-    "email": "duda69@gmail",
+    "nome": "duda",
+    "email": "duda@gmail",
     "data_nasc": "2022/06/20",
-    "turma_id": "oy7Rca",
     "hobbys": ["treinar22","ler22","beber22"]
 }
 
@@ -33,7 +42,6 @@ Content-Type: application/json
     "nome": "Lucas QueMedo",
     "email": "Lucas@email.com",
     "data_nasc": "2000/04/20",
-    "turma_id": "oy7Rca",
     "especialidades": ["React","JS"]
 
 }
@@ -43,8 +51,8 @@ PUT http://localhost:3003/docentes
 Content-Type: application/json
 
 {
-    "id":"hqi6ElTJIKK",
-    "turma_id":"IvxF2P"
+    "id":"",
+    "turma_id":""
 }
 
 ###
@@ -52,8 +60,8 @@ POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome":"silveira",
-    "modulo": 5
+    "nome":"Sem turma",
+    "modulo": 0
 }
 
 ###
@@ -61,4 +69,6 @@ GET http://localhost:3003/turma
 
 ###
 GET http://localhost:3003/turma/active
+
+
 

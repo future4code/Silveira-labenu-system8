@@ -1,6 +1,6 @@
 import { Estudantes } from "../Model/Estudante";
 import idGenerator from "../Model/GeradorID";
-import { hobby, Student } from "../Model/Types";
+import { hobby, Student, teste } from "../Model/Types";
 import BaseDataBase from "./BaseDataBase";
 
 export default class StudentDatabase extends BaseDataBase {
@@ -30,16 +30,16 @@ export default class StudentDatabase extends BaseDataBase {
                 data_nasc: student.getData_nasc(),
                 turma_id: student.getTurma_id(),
         })
-            const hobbys = student.hobbys.map((Hobby:hobby):Promise<void> => 
+            const hobbys = student.hobbys.map((hobby:hobby):Promise<void> => 
                 BaseDataBase.connection('hobby')
                             .insert({
-                                id: Hobby.id,
-                                nome: Hobby.nome
+                                id: hobby.id,
+                                nome: hobby.nome
                             }),
             )
             await Promise.all(hobbys)
 
-            const studentsHobby = student.hobbys.map((hobby:hobby) => 
+            const studentsHobby = student.hobbys.map((hobby:hobby):Promise<void> => 
                 BaseDataBase.connection('estudante_hobby')
                             .insert({
                                 id: idGenerator(5),
@@ -53,4 +53,10 @@ export default class StudentDatabase extends BaseDataBase {
             throw new Error('Erro no banco de dados')
         }
     }
+
+    public changeClass = async (id:string,turma_id:string):Promise<void> => {
+        await BaseDataBase.connection('estudante').update({turma_id}).where({id})
+    }
 }
+
+export const tes = new teste()

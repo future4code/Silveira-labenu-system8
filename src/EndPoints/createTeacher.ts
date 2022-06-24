@@ -8,7 +8,7 @@ import idGenerator from "../Model/GeradorID";
 export default async function createTeacher(req: Request, res: Response) {
     const statusCode = 201
     const id: string = idGenerator(10)
-    const { nome, email, data_nasc, turma_id, especialidades } = req.body
+    const { nome, email, data_nasc, especialidades } = req.body
 
     const especialidadeId = especialidades.map((especialidade: string) => {
 
@@ -17,7 +17,7 @@ export default async function createTeacher(req: Request, res: Response) {
         
     try {
         const teacherDB = new TeacherDatabase()
-        const teacher = new Docentes(id, nome, email, data_nasc, turma_id, especialidadeId)
+        const teacher = new Docentes(id, nome, email, data_nasc, especialidadeId)
         await teacherDB.create(teacher)
 
         res.status(statusCode).send()
