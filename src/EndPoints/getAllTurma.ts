@@ -9,7 +9,7 @@ export default async function getAllTurmas(req:Request, res:Response):Promise<vo
         res.status(statusCode).send(await turmaDB.getAllTurmas())
         
     } catch (error:any) {
-        res.status(404).send("Turmas Não encontradas!")
-        
-    }
+        res.status(404).send("Turmas Não encontradas!"|| error.sqlMessage )
+       
+    }   
 }
