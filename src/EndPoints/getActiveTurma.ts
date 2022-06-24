@@ -13,7 +13,7 @@ export default async function getActiveTurma(req:Request, res:Response):Promise<
             errorCode = 422
             throw new Error('Informe o numero do modulo')
         }
-        const getActiveTurmaDB = new turmaDataBase()
+        const getActiveTurmaDB = new TurmaDataBase()
         res.status(statusCode).send(await getActiveTurmaDB.getActive(modulo))
     } catch (error:any) {
         res.status(400).send("Não existe turmas ativas nesse modulo!")
