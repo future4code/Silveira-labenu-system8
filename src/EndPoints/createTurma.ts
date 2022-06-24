@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import turmaDataBase from "../Data/turmaDataBase";
+import TurmaDataBase from "../Data/turmaDataBase";
 import idGenerator from "../Model/GeradorID";
 import { Turmas } from "../Model/Turmas";
 
@@ -10,12 +10,15 @@ export default async function createTurma(req:Request, res:Response) {
     const {nome, modulo} = req.body
     try {
 
+      
+
         if (!nome || !modulo) {
             errorCode = 422
             throw new Error('Verifique se todos os campos estão preenchidos')
         }
 
         const turmaDB = new turmaDataBase()
+
         const turma = new Turmas(id, nome, modulo)
         await turmaDB.createTurma(turma)
         res.status(statusCode).send("Turma criada com sucesso!")
