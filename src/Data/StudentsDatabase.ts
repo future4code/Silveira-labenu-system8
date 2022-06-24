@@ -1,6 +1,6 @@
 import { Estudantes } from "../Model/Estudante";
 import idGenerator from "../Model/GeradorID";
-import { hobby, Student, teste } from "../Model/Types";
+import { hobby, Student,} from "../Model/Types";
 import BaseDataBase from "./BaseDataBase";
 
 export default class StudentDatabase extends BaseDataBase {
@@ -59,4 +59,4 @@ export default class StudentDatabase extends BaseDataBase {
     }
 }
 
-export const tes = new teste()
+

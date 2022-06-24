@@ -1,5 +1,5 @@
 
-import { Especialidades, EspecificidadesEnum, Especialidade, Usuario } from "./Types";
+import { Especialidades, Especialidade, Usuario } from "./Types";
 
 export class Docentes extends Usuario implements Especialidades {
     especialidades: Especialidade[] = []

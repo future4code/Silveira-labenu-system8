@@ -6,8 +6,8 @@ PUT http://localhost:3003/estudantes
 Content-Type: application/json
 
 {
-    "id": "h7MkRx",
-    "turma_id":"tANmNw"
+    "id": "",
+    "turma_id":""
 }
 
 ###
@@ -16,10 +16,10 @@ POST  http://localhost:3003/estudantes
 Content-Type: application/json
 
 {
-    "nome": "duda",
-    "email": "duda@gmail",
-    "data_nasc": "2022/06/20",
-    "hobbys": ["treinar22","ler22","beber22"]
+    "nome": "",
+    "email": "",
+    "data_nasc": "",
+    "hobbys": []
 }
 
 ###
@@ -39,10 +39,10 @@ POST http://localhost:3003/docentes
 Content-Type: application/json
 
 {  
-    "nome": "Lucas QueMedo",
-    "email": "Lucas@email.com",
-    "data_nasc": "2000/04/20",
-    "especialidades": ["React","JS"]
+    "nome": "",
+    "email": "",
+    "data_nasc": "",
+    "especialidades": [""]
 
 }
 
