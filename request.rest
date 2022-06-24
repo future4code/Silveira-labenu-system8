@@ -1,74 +1,90 @@
+
+### Pegar todos os estudantes
 GET http://localhost:3003/estudantes
 
-###
+### Mudar um estudante de turma
 
 PUT http://localhost:3003/estudantes
 Content-Type: application/json
 
 {
-    "id": "",
-    "turma_id":""
+    "id": "rCmvIk",
+    "turma_id":"gBVbMV"
 }
 
-###
+### Criar um estudante
 
 POST  http://localhost:3003/estudantes
 Content-Type: application/json
 
 {
-    "nome": "Adeir",
-    "email": "adeir@devFront-end.com",
-    "data_nasc": "12/12/1994",
-    "hobbys": ["amar","codar","dormir"]
+    "nome": "Victor Papa",
+    "email": "victorpapa@devFront-end.com",
+    "data_nasc": "20/06/2003",
+    "hobbys": ["dormir","comer cucuz","jogar valorant", "Dar carteirasso em blitz"]
 }
 
-###
+### Buscar estudante pelo nome
 
 GET http://localhost:3003/estudantes/search?term=adeir
 
 
 
-###
+### Pegar todos os docentes
 
 GET http://localhost:3003/docentes
 Content-Type: application/json
 
 
-###
+### Criar docentes
 POST http://localhost:3003/docentes
 Content-Type: application/json
 
 {  
-    "nome": "Janayla",
-    "email": "jana@labenu.com",
-    "data_nasc": "20/05/2000",
+    "nome": "murilão da massa",
+    "email": "murilão@labenu.com",
+    "data_nasc": "20/05/1991",
     "especialidades": ["js","css","react"]
 
 }
 
-###
+### Trocar o docente de turma
 PUT http://localhost:3003/docentes
 Content-Type: application/json
 
 {
-    "id":"",
-    "turma_id":""
+    "id":"Go3mksbdSBn",
+    "turma_id":"tANmNw"
 }
 
-###
+### Criar turma
 POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome":"Sem turma",
-    "modulo": 0
+    "nome":"shaw",
+    "modulo": 1
 }
 
-###
+### Pegar todas as turmas
 GET http://localhost:3003/turma
 
-###
+### pegar turmas ativas
 GET http://localhost:3003/turma/active
+
+
+### Trocar modulo da turma
+PUT http://localhost:3003/turma
+Content-Type: application/json
+
+{
+    "id":"tANmNw",
+    "modulo":1
+
+}
+
+### Pegar estudantes e professores da mesma turma
+Get http://localhost:3003/turma/data/K2dRx6
 
 
 
